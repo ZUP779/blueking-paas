@@ -1667,6 +1667,10 @@ AGENT_SANDBOX_MOUNT_PATH_DENY_PREFIXES = settings.get(
     ["/proc", "/sys", "/dev", "/boot", "/etc", "/var", "/usr", "/lib", "/lib64", "/bin", "/sbin", "/root", "/tmp"],
 )
 
+
+# Agent Sandbox Pod 调度配置（AGENT_SANDBOX_NODE_SELECTOR / TOLERATIONS / RUNTIME_CLASS_NAME）
+# 由 workloads_settings 导入，通过 PAAS_WL_ 前缀的环境变量配置，此处不再重复定义
+
 # 是否展示应用可用性保障
 FE_FEATURE_SETTINGS_APP_AVAILABILITY_LEVEL = settings.get("FE_FEATURE_SETTINGS_APP_AVAILABILITY_LEVEL", False)
 # 是否展示 MCP Server 云 API 权限

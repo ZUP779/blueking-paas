@@ -39,6 +39,7 @@ YAML 文件和 `settings_local.yaml` 的内容，将其作为配置项使用。�
 - 环境变量可修改字典内的嵌套值，参考文档：https://www.dynaconf.com/envvars/
 """
 
+import json
 from pathlib import Path
 
 from dynaconf import LazySettings
@@ -127,7 +128,18 @@ AGENT_SANDBOX_CFS_DRIVER = settings.get("AGENT_SANDBOX_CFS_DRIVER", "com.tencent
 AGENT_SANDBOX_CFS_FSID = settings.get("AGENT_SANDBOX_CFS_FSID", "")
 AGENT_SANDBOX_CFS_HOST = settings.get("AGENT_SANDBOX_CFS_HOST", "")
 AGENT_SANDBOX_CFS_PATH = settings.get("AGENT_SANDBOX_CFS_PATH", "/")
-AGENT_SANDBOX_CFS_VERS = settings.get("AGENT_SANDBOX_CFS_VERS", "3")
+AGENT_SANDBOX_CFS_VERS = str(settings.get("AGENT_SANDBOX_CFS_VERS", "3"))
+
+# Agent Sandbox Pod 调度配置
+# nodeSelector: 将沙箱 Pod 调度到具有指定标签的节点
+# 注意：通过环境变量传入时，值需为 JSON 字符串，此处自动解析
+_node_selector_raw = settings.get("AGENT_SANDBOX_NODE_SELECTOR", {})
+AGENT_SANDBOX_NODE_SELECTOR = json.loads(_node_selector_raw) if isinstance(_node_selector_raw, str) else _node_selector_raw
+# tolerations: 允许沙箱 Pod 被调度到具有特定污点的节点
+_tolerations_raw = settings.get("AGENT_SANDBOX_TOLERATIONS", [])
+AGENT_SANDBOX_TOLERATIONS = json.loads(_tolerations_raw) if isinstance(_tolerations_raw, str) else _tolerations_raw
+# runtimeClassName: 指定沙箱 Pod 使用的运行时类（如 kata-containers、gVisor 等）
+AGENT_SANDBOX_RUNTIME_CLASS_NAME = settings.get("AGENT_SANDBOX_RUNTIME_CLASS_NAME", "")
 
 # ---------------
 # 资源命名配置

@@ -167,3 +167,31 @@ class TestConstructPodSpecVolumes:
             "path": "/data",
             "vers": "4",
         }
+
+
+class TestSchedulingConfig:
+    """Verify nodeSelector / tolerations / runtimeClassName rendering."""
+
+    def test_default_no_scheduling_fields(self, sbx_app):
+        sbx = _make_sandbox(sbx_app)
+        spec = AgentSandboxSerializer._construct_pod_spec(sbx)
+
+        assert "nodeSelector" not in spec
+        assert "tolerations" not in spec
+        assert "runtimeClassName" not in spec
+
+    def test_scheduling_fields_follow_settings(self, sbx_app, settings):
+        settings.AGENT_SANDBOX_NODE_SELECTOR = {"dedicated": "agent-sandbox"}
+        settings.AGENT_SANDBOX_TOLERATIONS = [
+            {"key": "dedicated", "operator": "Equal", "value": "agent-sandbox", "effect": "NoSchedule"}
+        ]
+        settings.AGENT_SANDBOX_RUNTIME_CLASS_NAME = "gvisor"
+
+        sbx = _make_sandbox(sbx_app)
+        spec = AgentSandboxSerializer._construct_pod_spec(sbx)
+
+        assert spec["nodeSelector"] == {"dedicated": "agent-sandbox"}
+        assert spec["tolerations"] == [
+            {"key": "dedicated", "operator": "Equal", "value": "agent-sandbox", "effect": "NoSchedule"}
+        ]
+        assert spec["runtimeClassName"] == "gvisor"

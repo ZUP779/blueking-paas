@@ -116,6 +116,15 @@ class AgentSandboxSerializer(KresAppEntitySerializer["AgentSandbox"]):
         }
         if volumes:
             pod_spec["volumes"] = volumes
+
+        # 调度配置：从全局 settings 读取，由平台运维统一管控
+        if settings.AGENT_SANDBOX_NODE_SELECTOR:
+            pod_spec["nodeSelector"] = settings.AGENT_SANDBOX_NODE_SELECTOR
+        if settings.AGENT_SANDBOX_TOLERATIONS:
+            pod_spec["tolerations"] = settings.AGENT_SANDBOX_TOLERATIONS
+        if settings.AGENT_SANDBOX_RUNTIME_CLASS_NAME:
+            pod_spec["runtimeClassName"] = settings.AGENT_SANDBOX_RUNTIME_CLASS_NAME
+
         return pod_spec
 
 

@@ -924,6 +924,19 @@ DEV_SANDBOX_CLUSTER: ""
 # CFS 协议版本
 # AGENT_SANDBOX_CFS_VERS: "3"
 
+# Agent Sandbox Pod 调度配置
+# nodeSelector: 将沙箱 Pod 调度到具有指定标签的节点
+# AGENT_SANDBOX_NODE_SELECTOR:
+#   dedicated: agent-sandbox
+# tolerations: 允许沙箱 Pod 被调度到具有特定污点的节点
+# AGENT_SANDBOX_TOLERATIONS:
+#   - key: dedicated
+#     operator: Equal
+#     value: agent-sandbox
+#     effect: NoSchedule
+# runtimeClassName: 指定沙箱 Pod 使用的运行时类（如 gvisor、kata-containers 等）
+# AGENT_SANDBOX_RUNTIME_CLASS_NAME: ""
+
 # 沙箱容器内不允许用户挂载共享卷的路径前缀黑名单，防止覆盖 daemon 或基础工具链
 # AGENT_SANDBOX_MOUNT_PATH_DENY_PREFIXES:
 #   - "/proc"
