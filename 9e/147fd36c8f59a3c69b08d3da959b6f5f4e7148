@@ -1,0 +1,16 @@
+apiserver/paasng/paasng/utils/error_codes.py
+  h_190e3af8dc7b5f 256,258-260
+apiserver/paasng/paasng/platform/bkapp_model/manifest.py
+  h_190e3af8dc7b5f 65,599-602
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "9e147fd36c8f59a3c69b08d3da959b6f5f4e7148",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
