@@ -1,0 +1,18 @@
+apiserver/paasng/paasng/platform/bkapp_model/manifest.py
+  h_190e3af8dc7b5f 65,603-606
+operator/pkg/controllers/bkapp/processes/sandbox_instances.go
+  h_190e3af8dc7b5f 79,92-94,124-136,141-143,154-155,159-160,169,172-173,184,298-299
+apiserver/paasng/paas_wl/bk_app/processes/views.py
+  h_190e3af8dc7b5f 263
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "d6c49e142a0f565634fd6eff8efca5870bb8f974",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
