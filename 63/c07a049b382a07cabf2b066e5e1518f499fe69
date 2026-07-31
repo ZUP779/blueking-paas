@@ -1,0 +1,14 @@
+apiserver/paasng/paasng/utils/error_codes.py
+  h_190e3af8dc7b5f 256,258-260
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "63c07a049b382a07cabf2b066e5e1518f499fe69",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
