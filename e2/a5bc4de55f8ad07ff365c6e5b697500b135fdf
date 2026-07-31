@@ -1,5 +1,7 @@
 apiserver/paasng/paasng/utils/error_codes.py
   h_190e3af8dc7b5f 256,258-260
+apiserver/paasng/paasng/platform/bkapp_model/manifest.py
+  h_190e3af8dc7b5f 65,599-602
 ---
 {
   "schema_version": "authorship/3.0.0",
