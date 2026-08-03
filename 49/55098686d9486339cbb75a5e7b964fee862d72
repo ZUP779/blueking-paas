@@ -1,0 +1,27 @@
+apiserver/paasng/paas_wl/bk_app/processes/views.py
+  h_190e3af8dc7b5f 263-264
+  h_190e3af8dc7b5f 77
+apiserver/paasng/paas_wl/bk_app/processes/controllers.py
+  h_190e3af8dc7b5f 88,90
+apiserver/paasng/paas_wl/bk_app/processes/watch.py
+  h_190e3af8dc7b5f 83
+apiserver/paasng/paasng/platform/applications/models.py
+  h_190e3af8dc7b5f 428,433-436
+  h_190e3af8dc7b5f 437
+apiserver/paasng/paasng/platform/bkapp_model/manifest.py
+  h_190e3af8dc7b5f 602,604
+  h_190e3af8dc7b5f 65
+operator/api/sandbox/v1beta1/types.go
+  h_190e3af8dc7b5f 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "4955098686d9486339cbb75a5e7b964fee862d72",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
