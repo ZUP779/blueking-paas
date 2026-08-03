@@ -1,0 +1,36 @@
+apiserver/paasng/paas_wl/bk_app/processes/controllers.py
+  h_190e3af8dc7b5f 20,94,96
+operator/controllers/bkapp_controller.go
+  h_190e3af8dc7b5f 45
+operator/pkg/controllers/bkapp/processes/sandbox_instances.go
+  h_190e3af8dc7b5f 30,48-53,142-146,148,151-152,161,177,179,182-183,200-259,301-308,320
+operator/api/sandbox/v1beta1/types.go
+  h_190e3af8dc7b5f 26-42
+apiserver/paasng/paasng/platform/bkapp_model/manifest.py
+  h_190e3af8dc7b5f 69,605,607
+operator/pkg/controllers/bkapp/common/names/names.go
+  h_190e3af8dc7b5f 43-48
+operator/pkg/controllers/bkapp/common/labels/labels.go
+  h_190e3af8dc7b5f 32-37
+apiserver/paasng/paasng/platform/bkapp_model/constants.py
+  h_190e3af8dc7b5f 29-34
+operator/main.go
+  h_190e3af8dc7b5f 47
+operator/api/v1alpha2/services.go
+  h_190e3af8dc7b5f 47
+operator/config/crd/bases/paas.bk.tencent.com_bkapps.yaml
+  h_190e3af8dc7b5f 930,2268
+operator/pkg/controllers/bkapp/processes/sandbox_instances_test.go
+  h_190e3af8dc7b5f 261,264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "2631a30cfa87060414b2aa386863b66fa3c68ad1",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
