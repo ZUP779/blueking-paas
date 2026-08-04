@@ -1,0 +1,48 @@
+operator/components/sidecar/v1/docs.md
+  h_190e3af8dc7b5f 5
+operator/pkg/controllers/bkapp/processes/sandbox_instances.go
+  s_46a5bfcd2cf509::t_8b174c4aae116c 180
+  s_46a5bfcd2cf509::t_08f25182ad03d9 181
+operator/api/sandbox/v1beta1/types.go
+  s_46a5bfcd2cf509::t_1cb1b43d49a219 77
+  s_46a5bfcd2cf509::t_a45d79ec13efe8 96-98,100-103,113-114
+  s_46a5bfcd2cf509::t_e3ad37395abe50 75-76
+operator/api/sandbox/v1beta1/zz_generated.deepcopy.go
+  s_46a5bfcd2cf509::t_10864ef62bbf97 134
+operator/pkg/controllers/bkapp/processes/sandbox_instances_test.go
+  s_46a5bfcd2cf509::t_fb500fec7b3a6e 365
+  s_46a5bfcd2cf509::t_307c5c1a1c097b 366-368,383,387-389,392,406
+apiserver/paasng/support-files/components/sidecar/v1/docs.md
+  h_190e3af8dc7b5f 5
+docs/reqs/AI_Agent应用接口扩展支持sidecar.md
+  h_190e3af8dc7b5f 1-111
+docs/reqs/AiAgent多容器方案对比.md
+  h_190e3af8dc7b5f 1-136
+docs/reqs/SandboxInstance_CR多容器声明能力.md
+  h_190e3af8dc7b5f 1-90
+docs/reqs/Sidecar容器镜像来源管理.md
+  h_190e3af8dc7b5f 1-102
+docs/reqs/ai_agent_api.md
+  h_190e3af8dc7b5f 1-221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "c76f60b3b1223463e663f4a57252a3ab797e0678",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_46a5bfcd2cf509": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4cfe68a1-6a79-4754-a403-642057ea87d7",
+        "model": "grok-4.5"
+      },
+      "human_author": null
+    }
+  }
+}
