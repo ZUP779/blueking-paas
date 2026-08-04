@@ -1,0 +1,18 @@
+operator/Makefile
+  h_190e3af8dc7b5f 20-21,140-144
+apiserver/paasng/paas_wl/bk_app/processes/controllers.py
+  h_190e3af8dc7b5f 111
+operator/Dockerfile-Dev
+  h_190e3af8dc7b5f 29,31,33,36-37,39,41-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "d9bb5aff292a19a58e1d6d1c31f3411dd0189802",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
