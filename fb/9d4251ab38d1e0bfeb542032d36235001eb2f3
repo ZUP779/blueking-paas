@@ -1,0 +1,34 @@
+apiserver/paasng/support-files/components/sidecar/v1/schema.json
+  h_190e3af8dc7b5f 18
+operator/components/sidecar/v1/schema.json
+  h_190e3af8dc7b5f 18
+operator/pkg/controllers/bkapp/processes/components/components.go
+  h_190e3af8dc7b5f 42-43
+operator/pkg/controllers/bkapp/processes/sandbox_instances.go
+  s_46a5bfcd2cf509::t_35b2ace9e28c2c 180
+operator/pkg/controllers/bkapp/processes/sandbox_instances_test.go
+  s_46a5bfcd2cf509::t_c895931cf34848 365-367
+operator/api/sandbox/v1beta1/types.go
+  s_46a5bfcd2cf509::t_aed950ceab8b6f 76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "fb9d4251ab38d1e0bfeb542032d36235001eb2f3",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_46a5bfcd2cf509": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4cfe68a1-6a79-4754-a403-642057ea87d7",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
