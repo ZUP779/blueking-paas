@@ -1,0 +1,24 @@
+apiserver/paasng/tests/paasng/platform/bkapp_model/test_manifest.py
+  s_46a5bfcd2cf509::t_8b3fef0edf18f6 376
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "0aca07c3dd7cde60ba25e596fc4247ec28313316",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_46a5bfcd2cf509": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4cfe68a1-6a79-4754-a403-642057ea87d7",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
