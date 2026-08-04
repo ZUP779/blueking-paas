@@ -1,0 +1,17 @@
+operator/Makefile
+  h_190e3af8dc7b5f 20-21,140-143
+  h_190e3af8dc7b5f 144
+operator/Dockerfile-Dev
+  h_190e3af8dc7b5f 29,31,33,36-37,39,41-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "cde96466976ce28da4052fb0c191f72f6c59cf61",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
