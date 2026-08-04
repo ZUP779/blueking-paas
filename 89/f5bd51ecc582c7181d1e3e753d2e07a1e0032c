@@ -1,0 +1,34 @@
+operator/api/sandbox/v1beta1/zz_generated.deepcopy.go
+  s_46a5bfcd2cf509::t_10864ef62bbf97 134
+operator/pkg/controllers/bkapp/processes/sandbox_instances_test.go
+  s_46a5bfcd2cf509::t_fb500fec7b3a6e 365-368,383,387-388,391,405-448
+operator/pkg/controllers/bkapp/processes/sandbox_instances.go
+  s_46a5bfcd2cf509::t_539b2e7e838e05 55-59
+  s_46a5bfcd2cf509::t_f8c2ce6aa6a4d0 24,30
+  s_46a5bfcd2cf509::t_2a9a717728c7c8 204-207,211-253
+  s_46a5bfcd2cf509::t_c51776c3f40153 254
+operator/api/sandbox/v1beta1/types.go
+  h_190e3af8dc7b5f 75
+  s_46a5bfcd2cf509::t_1cb1b43d49a219 76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "89f5bd51ecc582c7181d1e3e753d2e07a1e0032c",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_46a5bfcd2cf509": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4cfe68a1-6a79-4754-a403-642057ea87d7",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
