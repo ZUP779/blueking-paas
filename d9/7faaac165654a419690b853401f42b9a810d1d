@@ -42,6 +42,8 @@ operator/components/persistent_rootfs/v1/schema.json
 apiserver/paasng/support-files/components/persistent_rootfs/v1/template.yaml
   s_78e88dbe39e3a7::t_35ddf4253670be 2,9-14,16-21,27-28,36
   s_78e88dbe39e3a7::t_af94f005d814d8 1,3-8,15,22-26,29-35,37-47
+operator/pkg/controllers/bkapp/processes/components/persistent_rootfs_test.go
+  s_78e88dbe39e3a7::t_4fca635fadb44f 1-225
 ---
 {
   "schema_version": "authorship/3.0.0",
