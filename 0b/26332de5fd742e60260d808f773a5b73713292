@@ -1,0 +1,21 @@
+operator/pkg/controllers/bkapp/processes/components/sidecar_test.go
+  s_46a5bfcd2cf509::t_08e641f29b9364 1-298
+operator/pkg/controllers/bkapp/processes/components/components_test.go
+  s_46a5bfcd2cf509::t_0ca61ea5e115da 129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "0b26332de5fd742e60260d808f773a5b73713292",
+  "prompts": {},
+  "sessions": {
+    "s_46a5bfcd2cf509": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4cfe68a1-6a79-4754-a403-642057ea87d7",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
