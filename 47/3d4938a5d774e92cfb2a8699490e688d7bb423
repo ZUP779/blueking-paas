@@ -1,0 +1,16 @@
+apiserver/paasng/support-files/components/sidecar/v1/docs.md
+  h_190e3af8dc7b5f 5-6
+operator/components/sidecar/v1/docs.md
+  h_190e3af8dc7b5f 5-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "473d4938a5d774e92cfb2a8699490e688d7bb423",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
