@@ -1,0 +1,46 @@
+apiserver/paasng/support-files/components/persistent_rootfs/v1/docs.md
+  s_f39c5b463241d9::t_69a872907b63f7 1-60
+apiserver/paasng/support-files/components/persistent_rootfs/v1/schema.json
+  s_f39c5b463241d9::t_7f0f7a12349e95 1-27
+apiserver/paasng/support-files/components/persistent_rootfs/v1/template.yaml
+  s_f39c5b463241d9::t_4100417f79e74f 1-47
+apiserver/paasng/tests/paasng/platform/bkapp_model/test_manifest.py
+  s_f39c5b463241d9::t_357849a6e102b5 18,262-278,400-414
+apiserver/paasng/tests/paasng/platform/declarative/deployment/v3/test_controller.py
+  s_f39c5b463241d9::t_a3d41fd3b1f6c1 174-233
+operator/Dockerfile-Dev
+  s_f39c5b463241d9::t_2cce93d844cb6e 22-24
+operator/api/sandbox/v1beta1/types.go
+  s_f39c5b463241d9::t_3bf0263344b3de 82,122,127-136
+operator/components/persistent_rootfs/v1/docs.md
+  s_f39c5b463241d9::t_0d6e925047f29f 1-60
+operator/components/persistent_rootfs/v1/schema.json
+  s_f39c5b463241d9::t_2f666de13b20e9 1-27
+operator/components/persistent_rootfs/v1/template.yaml
+  s_f39c5b463241d9::t_cc704e0222f1de 1-47
+operator/pkg/controllers/bkapp/processes/components/components.go
+  s_f39c5b463241d9::t_b1d43cd30ef997 27,141-144,150,155-159,165,169-195
+operator/pkg/controllers/bkapp/processes/components/persistent_rootfs_test.go
+  s_f39c5b463241d9::t_9ae81bb7c86112 1-225
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "08ca7d32a8cbf4cb968ba759de6e1e3fe60fd95c",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_f39c5b463241d9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "484dcef5-4ac9-4dbe-8ab1-ed2d2c11c751",
+        "model": "unknown"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
