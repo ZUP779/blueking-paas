@@ -1,0 +1,95 @@
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/constants.py
+  s_2890e20f5b223f::t_f06db5cc23decb 36-50
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_models.py
+  s_2890e20f5b223f::t_509e427c142475 100-101,104-106,108
+  s_2890e20f5b223f::t_225c56e89ea556 102-103,107
+  s_2890e20f5b223f::t_2d48315d15e2b3 69-74,76-82
+  s_2890e20f5b223f::t_e7e922c3862f10 19,25,27,68,75
+  h_190e3af8dc7b5f 67
+  s_2890e20f5b223f::t_5977c07337eb2e 24
+  s_2890e20f5b223f::t_2aad8aaba66bb4 83
+apiserver/paasng/paasng/platform/agent_sandbox/sandbox.py
+  s_2890e20f5b223f::t_f3e4466e089dcd 30-34,38,40,43
+  s_2890e20f5b223f::t_571caf122e462e 267,295,297,299-300,302-304,306-310,312-314,317-320,336-341,343-345,347,350
+  s_2890e20f5b223f::t_cbf6b6ed3f7de1 353-358
+  s_2890e20f5b223f::t_9c567059f00b02 293-294,296
+  s_2890e20f5b223f::t_d42c98078fa2ea 44,298,346,363,437,458,463,573
+  s_2890e20f5b223f::t_b397a8105affaf 212
+  s_2890e20f5b223f::t_215e0865019e58 394-395,404-405,424-429,434-436,440-441,443
+  s_2890e20f5b223f::t_aa1fa2627a204c 396-403
+  s_2890e20f5b223f::t_d2b445dadde01a 268-281,283-284,286
+  s_2890e20f5b223f::t_f7694d5b4023d0 282,285,287
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_entities.py
+  s_2890e20f5b223f::t_959ad37c81d56c 184-185,187-190,192-195,224-226
+  s_2890e20f5b223f::t_55a3215a3ac6ce 191
+  s_2890e20f5b223f::t_d42c98078fa2ea 28,96,131-132,183,186,216,221-223
+  s_2890e20f5b223f::t_23e32f50e3b140 18
+  s_2890e20f5b223f::t_7a99569837a162 25-26
+  s_2890e20f5b223f::t_174705486ebe06 147-148,161
+  s_2890e20f5b223f::t_240f9eb8b36284 27
+  s_2890e20f5b223f::t_aa0a7956071133 182
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_create_sandbox.py
+  s_2890e20f5b223f::t_d42c98078fa2ea 93
+  s_2890e20f5b223f::t_becb1854f33bee 237-240
+  s_2890e20f5b223f::t_812305c5045962 87-92,94-110
+apiserver/paasng/tests/paas_wl/infras/cluster/test_allocator.py
+  s_2890e20f5b223f::t_5a81376ff702ec 51
+  s_2890e20f5b223f::t_9089f39fd5f218 79-80
+  s_2890e20f5b223f::t_a1160593f1f1fa 78
+  s_2890e20f5b223f::t_4dd35f91681ed5 182-183
+  s_2890e20f5b223f::t_ac32e628d320e0 181
+  s_2890e20f5b223f::t_1e0166a46c77b8 77
+apiserver/paasng/paasng/platform/agent_sandbox/models.py
+  s_2890e20f5b223f::t_ae399404506133 121,125
+  s_2890e20f5b223f::t_48b06e0b92b028 126-130
+  s_2890e20f5b223f::t_4cd94b72958ba1 41
+  s_2890e20f5b223f::t_2ffecf28fe2f1a 120,122-124
+apiserver/paasng/paas_wl/infras/cluster/entities.py
+  s_2890e20f5b223f::t_f7ba790bca42cd 215-219,221,224-226,234,240
+  s_2890e20f5b223f::t_8f3db5476c76f5 220,228-230,233,236
+  s_2890e20f5b223f::t_8d6f5998fa98bd 227
+apiserver/paasng/tests/api/platform/agent_sandbox/conftest.py
+  s_2890e20f5b223f::t_d42c98078fa2ea 24,140
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_slzs.py
+  s_2890e20f5b223f::t_477fb83c4b064a 55-90,93-113,309-310
+  s_2890e20f5b223f::t_2497545ab6dbd0 91-92
+  s_2890e20f5b223f::t_1f40aa6d124ebf 39-44
+  s_2890e20f5b223f::t_d42c98078fa2ea 114-115,117,129,192-193,195,229-230,234,236,267
+  s_2890e20f5b223f::t_a219d3df74b023 268,270
+  s_2890e20f5b223f::t_d2d1f6d2266146 28-32
+  s_2890e20f5b223f::t_3eeaa709d4d3e9 231-233,235,237-266,269,271-289,292-308
+  s_2890e20f5b223f::t_c8fde2bdb9761a 290-291
+apiserver/paasng/paas_wl/infras/resources/base/kres.py
+  s_2890e20f5b223f::t_e7533e84f59855 670-704
+apiserver/paasng/tests/paas_wl/bk_app/agent_sandbox/test_kres_entities.py
+  s_2890e20f5b223f::t_d42c98078fa2ea 26,79-80,92-93,125-127,135,147,160-162,177-178
+  h_190e3af8dc7b5f 24
+apiserver/paasng/tests/paasng/platform/agent_sandbox/conftest.py
+  s_2890e20f5b223f::t_d42c98078fa2ea 24,68-69,72,75,87
+apiserver/paasng/tests/paas_wl/bk_app/agent_sandbox/test_kres_slzs.py
+  s_2890e20f5b223f::t_78ae82689879c5 27-32,34,40
+  s_2890e20f5b223f::t_d42c98078fa2ea 18,39,56,62,83,102,140,173,188,190,198,208
+  s_2890e20f5b223f::t_256d4da4bc2f31 212-242
+  h_190e3af8dc7b5f 36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "0c59bd6371e0a643b27cb2953c0af2ac69b8d834",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_2890e20f5b223f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a24bd7ff-0f09-44de-aaab-4368e7f64dad",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
