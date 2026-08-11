@@ -1,0 +1,80 @@
+apiserver/paasng/paasng/platform/agent_sandbox/models.py
+  s_0b2994ee05f517::t_716be872d3af45 119
+apiserver/paasng/tests/paas_wl/infras/cluster/test_allocator.py
+  s_0b2994ee05f517::t_e484bd05ed9b86 185-187
+  s_0b2994ee05f517::t_24f84d2544db51 78-80
+  s_0b2994ee05f517::t_863274831d880d 77
+apiserver/paasng/paasng/platform/agent_sandbox/sandbox.py
+  s_4d9298ad95c7c1::t_e1c2fa640ef097 356
+  s_4d9298ad95c7c1::t_dc7ae68dad5bde 283,291
+  s_4d9298ad95c7c1::t_e3413e885bb139 595,616,625,631-632,641
+  s_4d9298ad95c7c1::t_a79a8ea923e7e3 633-635
+  s_4d9298ad95c7c1::t_6ed09f6bc6ff8b 598-601
+  s_0b2994ee05f517::t_2b3a90dba7a95d 403-406,408,410,412-425,428
+  s_4d9298ad95c7c1::t_698de3bbbada98 482,487
+  s_4d9298ad95c7c1::t_54773b1d3bd0ce 42
+  s_4d9298ad95c7c1::t_94211123d5530b 611,626-630,636-640,642
+  s_4d9298ad95c7c1::t_aba4790e0e9a71 426-427
+  s_4d9298ad95c7c1::t_11e0a7c838d960 288,302,307,312,317,325
+  s_4d9298ad95c7c1::t_e277241673a01b 357-360,362
+  s_0b2994ee05f517::t_0454a9a830a1a8 407,409,411
+  s_0b2994ee05f517::t_f79f40661e6c53 289-290,293,295-297,299
+  s_4d9298ad95c7c1::t_8f7a72e87426a3 643
+apiserver/paasng/paas_wl/infras/cluster/entities.py
+  s_0b2994ee05f517::t_d167347f077da4 226-227,230
+apiserver/paasng/tests/paas_wl/bk_app/agent_sandbox/test_kres_entities.py
+  s_4d9298ad95c7c1::t_704550fc3ec0c4 23,27
+  s_4d9298ad95c7c1::t_ac0b90d1157c90 113-126
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_models.py
+  s_0b2994ee05f517::t_dcc19a92b7bf27 103,108
+apiserver/paasng/paas_wl/infras/cluster/constants.py
+  s_0b2994ee05f517::t_686b8f58350fc4 38
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_slzs.py
+  s_4d9298ad95c7c1::t_8cc8e40e381eb8 44
+  s_4d9298ad95c7c1::t_89a1aa2e8a7658 230-231,235
+  s_4d9298ad95c7c1::t_784f60849cd63e 268
+  s_4d9298ad95c7c1::t_7c076e1f05cae8 130
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_entities.py
+  s_4d9298ad95c7c1::t_0dc8be313b794c 96-103,112-114,116,136-139,155,190,193-200,229
+  h_190e3af8dc7b5f 191,201
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_create_sandbox.py
+  s_0b2994ee05f517::t_5aaf4edd451236 26,38
+  s_0b2994ee05f517::t_3a4275f71ea42e 27-31
+  s_0b2994ee05f517::t_0789ea43f05de3 398
+  s_4d9298ad95c7c1::t_1e9fd9bcd43327 467,473-489
+  s_0b2994ee05f517::t_4538cf4b6f4ad7 387
+  s_4d9298ad95c7c1::t_dc65270c012323 466,469-472,490
+  s_4d9298ad95c7c1::t_827eaebb9b4c72 468,497-503
+  s_0b2994ee05f517::t_b0cc968353e139 372-386,388-397,399-401
+  s_4d9298ad95c7c1::t_579cb5e26c7c2b 370-371,402-465
+  s_4d9298ad95c7c1::t_96f2941f0d71c3 491-496
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "baa00d914ff21649d33c9788ae79ecbd6e539c21",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_0b2994ee05f517": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f75801ad-42ce-4393-a6e9-851511f1a125",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    },
+    "s_4d9298ad95c7c1": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "55aa0e28-c455-4d5d-ba9a-b5b201318bbd",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
