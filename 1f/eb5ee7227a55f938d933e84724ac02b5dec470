@@ -1,0 +1,92 @@
+apiserver/paasng/paas_wl/infras/cluster/constants.py
+  s_0b2994ee05f517::t_686b8f58350fc4 38
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_models.py
+  s_0b2994ee05f517::t_dcc19a92b7bf27 103,108
+apiserver/paasng/paas_wl/infras/cluster/entities.py
+  s_0b2994ee05f517::t_d167347f077da4 226-227,230
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_create_sandbox.py
+  s_0b2994ee05f517::t_b0cc968353e139 372-386,388-397,399-401
+  s_4d9298ad95c7c1::t_579cb5e26c7c2b 370-371,402-465
+  s_0b2994ee05f517::t_0789ea43f05de3 398
+  s_0b2994ee05f517::t_3a4275f71ea42e 27-31
+  s_4d9298ad95c7c1::t_dc65270c012323 466,469-472,490
+  s_4d9298ad95c7c1::t_1e9fd9bcd43327 467,473-489
+  s_0b2994ee05f517::t_5aaf4edd451236 26,38
+  s_4d9298ad95c7c1::t_827eaebb9b4c72 468,497-503
+  s_4d9298ad95c7c1::t_96f2941f0d71c3 491-496
+  s_0b2994ee05f517::t_4538cf4b6f4ad7 387
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_slzs.py
+  s_4d9298ad95c7c1::t_784f60849cd63e 268
+  s_4d9298ad95c7c1::t_7c076e1f05cae8 130
+  s_4d9298ad95c7c1::t_8cc8e40e381eb8 44
+  s_4d9298ad95c7c1::t_89a1aa2e8a7658 230-231,235
+apiserver/paasng/tests/paas_wl/bk_app/agent_sandbox/test_kres_entities.py
+  s_4d9298ad95c7c1::t_663212637cef3a 126-127
+  s_4d9298ad95c7c1::t_ac0b90d1157c90 113-125,128
+  s_4d9298ad95c7c1::t_704550fc3ec0c4 23,27
+apiserver/paasng/paasng/platform/agent_sandbox/models.py
+  s_0b2994ee05f517::t_716be872d3af45 119
+apiserver/paasng/paasng/platform/agent_sandbox/sandbox.py
+  s_0b2994ee05f517::t_0454a9a830a1a8 403,405,407
+  s_4d9298ad95c7c1::t_b2f023ba637046 24
+  s_4d9298ad95c7c1::t_11e0a7c838d960 325,334
+  s_4d9298ad95c7c1::t_dc7ae68dad5bde 302
+  s_4d9298ad95c7c1::t_bf211b12081d1f 235-252
+  s_4d9298ad95c7c1::t_a79a8ea923e7e3 623-625
+  s_4d9298ad95c7c1::t_54773b1d3bd0ce 43
+  s_0b2994ee05f517::t_2b3a90dba7a95d 399-402,404,406,408-421,424
+  s_4d9298ad95c7c1::t_93d8c7d73cd4f4 315,318,321
+  s_4d9298ad95c7c1::t_6c83b08c1be956 287,307-311,313
+  s_4d9298ad95c7c1::t_e3413e885bb139 588,606,615,622,631
+  s_4d9298ad95c7c1::t_94211123d5530b 601,616-620,627-630,632
+  s_4d9298ad95c7c1::t_804e64f3c6768a 626
+  s_4d9298ad95c7c1::t_4b12c13414d6fb 591,621
+  s_4d9298ad95c7c1::t_8f7a72e87426a3 633
+  s_4d9298ad95c7c1::t_698de3bbbada98 475,480
+  s_4d9298ad95c7c1::t_dfc89d3a546bf2 454
+  s_4d9298ad95c7c1::t_fcaabe80202fdd 329
+  s_4d9298ad95c7c1::t_ee255dd42d6ced 51
+  s_4d9298ad95c7c1::t_aba4790e0e9a71 422-423
+  s_4d9298ad95c7c1::t_9b642fc6f0af24 346,353,358
+apiserver/paasng/tests/paas_wl/infras/cluster/test_allocator.py
+  s_0b2994ee05f517::t_e484bd05ed9b86 185-187
+  s_0b2994ee05f517::t_24f84d2544db51 78-80
+  s_0b2994ee05f517::t_863274831d880d 77
+apiserver/paasng/paas_wl/bk_app/agent_sandbox/kres_entities.py
+  s_4d9298ad95c7c1::t_6ec2f36dbcf003 18
+  s_4d9298ad95c7c1::t_12e723afb8b240 105-106
+  s_4d9298ad95c7c1::t_1b9655e414961d 104
+  s_4d9298ad95c7c1::t_9a80d768e85ced 123-125
+  s_4d9298ad95c7c1::t_0dc8be313b794c 96-103,115-117,119,142-145,161,196,201-208,239
+  h_190e3af8dc7b5f 197,209
+  s_4d9298ad95c7c1::t_991e88f40744a9 199-200,210-211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "1feb5ee7227a55f938d933e84724ac02b5dec470",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_0b2994ee05f517": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "f75801ad-42ce-4393-a6e9-851511f1a125",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    },
+    "s_4d9298ad95c7c1": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "55aa0e28-c455-4d5d-ba9a-b5b201318bbd",
+        "model": "grok-4.5"
+      },
+      "human_author": null
+    }
+  }
+}
