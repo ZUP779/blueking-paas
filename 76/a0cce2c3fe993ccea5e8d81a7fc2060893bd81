@@ -1,0 +1,85 @@
+apiserver/paasng/paasng/platform/agent_sandbox/urls.py
+  s_2890e20f5b223f::t_09d7338a6e9119 64
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_models.py
+  s_2890e20f5b223f::t_f3706ec5e03c25 54-55,62
+  s_2890e20f5b223f::t_78d6ea0b778f63 59-60
+  s_2890e20f5b223f::t_a0edf0b41abbfa 63
+  s_2890e20f5b223f::t_fd41f6ea141a4f 23,48,56-58,61
+apiserver/paasng/paasng/platform/agent_sandbox/views.py
+  s_2890e20f5b223f::t_6c98d4c3aaf842 374-375,377-379,385,402
+  s_2890e20f5b223f::t_ba830228636b3e 59
+  s_2890e20f5b223f::t_d17f38cfe902bc 78
+  s_2890e20f5b223f::t_163ea417552171 376,380-384,386-401
+  s_2890e20f5b223f::t_5edc2f821f0893 361
+apiserver/paasng/tests/api/platform/agent_sandbox/test_sandbox.py
+  s_2890e20f5b223f::t_887f16b8b3034f 38,75
+  s_2890e20f5b223f::t_dd469b1ef6f0f0 113
+  s_2890e20f5b223f::t_e995f901bbbac4 26,33-36
+  s_2890e20f5b223f::t_6421ed341a8b10 77
+  s_2890e20f5b223f::t_cb4b82ad5f1bc3 42,45,47-48,50-52,54-55,57-61,69-74,76
+  s_2890e20f5b223f::t_7fdb195fc75ae8 37,39-41,43-44,46,49,53,56,62-68
+apiserver/paasng/paasng/platform/agent_sandbox/migrations/0009_sandbox_workload_type.py
+  s_2890e20f5b223f::t_a1170c3be9b89c 1-17,19-23
+  s_4fb6518a233d04::t_a915a01968a893 18
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_serializers.py
+  s_2890e20f5b223f::t_e11d9ae2f583a0 167-169,171,173-176,178,180-184
+  s_2890e20f5b223f::t_e0489a96666a27 185-189,191-210
+  s_2890e20f5b223f::t_4d5ce279699ad6 170,172,177,190
+  s_2890e20f5b223f::t_a0c0eedc8870d6 22,26
+  s_2890e20f5b223f::t_243c1bc2d01218 179
+apiserver/paasng/paasng/platform/agent_sandbox/sandbox.py
+  s_4fb6518a233d04::t_0b31e6dd0631f2 157
+  s_2890e20f5b223f::t_9998757a747b4a 142,181
+  s_2890e20f5b223f::t_77e3bf7b708892 51
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_create_sandbox.py
+  s_2890e20f5b223f::t_c7701fd7a5f474 83
+  s_2890e20f5b223f::t_15bf7210ff31ed 30
+  s_2890e20f5b223f::t_8efa322c43f4a8 156,161,190,195
+  s_2890e20f5b223f::t_2da3a6a034600f 155,160,167,172,189,194
+apiserver/paasng/paasng/platform/agent_sandbox/models.py
+  h_190e3af8dc7b5f 120,183
+  s_2890e20f5b223f::t_cc903ac8982df6 39
+  s_2890e20f5b223f::t_af6ea8027b77d3 104,144
+  s_4fb6518a233d04::t_ab943e450bf05f 188
+  s_2890e20f5b223f::t_01042a83267cdd 184-187,189
+apiserver/paasng/paasng/platform/agent_sandbox/serializers.py
+  s_2890e20f5b223f::t_4e874a1aecd4eb 123-127,129
+  s_4fb6518a233d04::t_5993422504d7e7 128
+  s_2890e20f5b223f::t_dfa45c933b6daa 190,204
+  s_4fb6518a233d04::t_f199247fddce66 160
+  s_2890e20f5b223f::t_7d48ea68ec303d 26-31
+  s_2890e20f5b223f::t_cdbc1df6b98cb6 153-159,161-175
+apiserver/paasng/paasng/platform/agent_sandbox/constants.py
+  s_2890e20f5b223f::t_25dd4bf812c852 38
+  s_4fb6518a233d04::t_f59ab3c97b2c29 42
+  s_2890e20f5b223f::t_3475d47d1dc908 34-37,39-41,43-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "76a0cce2c3fe993ccea5e8d81a7fc2060893bd81",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_2890e20f5b223f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a24bd7ff-0f09-44de-aaab-4368e7f64dad",
+        "model": "grok-4.5"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    },
+    "s_4fb6518a233d04": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e76ab359-6a39-4ae2-95ab-ee6040ac5650",
+        "model": "grok-4.5"
+      },
+      "human_author": null
+    }
+  }
+}
