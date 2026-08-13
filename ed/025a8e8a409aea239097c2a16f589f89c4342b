@@ -1,0 +1,41 @@
+apiserver/paasng/paasng/platform/agent_sandbox/sandbox.py
+  h_190e3af8dc7b5f 233
+  s_4d9298ad95c7c1::t_c3841759761cd3 464
+  s_4d9298ad95c7c1::t_3eab4ff73c0c1c 29
+  s_4d9298ad95c7c1::t_3811584209929f 407
+  s_4d9298ad95c7c1::t_2baef0a98298cd 232,234-243
+apiserver/paasng/tests/paasng/platform/agent_sandbox/test_create_sandbox.py
+  s_4d9298ad95c7c1::t_26ec9f48d4db18 152
+  s_4d9298ad95c7c1::t_7eabd00b2548a4 270-281,289
+  s_4d9298ad95c7c1::t_36514b39c8e13f 140-151,153,155-169
+  s_4d9298ad95c7c1::t_9ca0f27d1e2c5e 443
+  s_4d9298ad95c7c1::t_ee97231a3a207a 105,119,122
+  s_4d9298ad95c7c1::t_dd54f8653b82a4 444
+  s_4d9298ad95c7c1::t_f3ddae4a722179 38-43
+  s_4d9298ad95c7c1::t_2be76b55ddbd94 154
+apiserver/paasng/tests/paas_wl/bk_app/agent_sandbox/test_kres_slzs.py
+  s_4d9298ad95c7c1::t_7e58dae9d5608f 226-233
+  s_4d9298ad95c7c1::t_9a846ade3f2e2b 251,253-257
+  s_4d9298ad95c7c1::t_e303d993766354 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "ed025a8e8a409aea239097c2a16f589f89c4342b",
+  "prompts": {},
+  "humans": {
+    "h_190e3af8dc7b5f": {
+      "author": "ZUP779 <zup779@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_4d9298ad95c7c1": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "55aa0e28-c455-4d5d-ba9a-b5b201318bbd",
+        "model": "grok-4.6"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
