@@ -1,0 +1,19 @@
+bkpkg-bkpaas3.yaml
+  s_ba24ba4b042eda::t_e6a63fcfe6f6b0 22-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4fab265ceceea872629841287ed6511b39e4836a",
+  "prompts": {},
+  "sessions": {
+    "s_ba24ba4b042eda": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "79222fc8-d77f-45ee-890d-b58e83dcdbcf",
+        "model": "grok-4.6"
+      },
+      "human_author": "ZUP779 <zup779@gmail.com>"
+    }
+  }
+}
