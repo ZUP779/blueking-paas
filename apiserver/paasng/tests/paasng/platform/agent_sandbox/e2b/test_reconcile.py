@@ -21,6 +21,7 @@
 写入首见时间来模拟已等待的时长，不需要冻结时钟。
 """
 
+import logging
 import time
 import uuid
 
@@ -135,14 +136,47 @@ class TestStateConvergence:
 
         assert E2BSandbox.objects.get(sandbox_id="sbx-1").status == E2BSandboxStatus.PAUSED.value
 
-    def test_unknown_state_is_not_guessed(self, gateway, bk_app):
-        """网关给了不认识的状态时保持活跃"""
-        _record(bk_app, "sbx-1")
+    @pytest.mark.parametrize("local_status", [E2BSandboxStatus.RUNNING.value, E2BSandboxStatus.PAUSED.value])
+    def test_unknown_state_keeps_local_status(self, gateway, bk_app, local_status):
+        """网关给了不认识的状态时保留本地原状态。
+
+        不能回退到某个具体状态：本地是 PAUSED 时，兜底成 RUNNING 会把「平台枚举
+        落后于网关版本」写成用户记录上的一次假状态翻转。
+        """
+        _record(bk_app, "sbx-1", status=local_status)
         gateway.items = [_gateway_item("sbx-1", state="hibernating")]
 
-        reconcile.reconcile_all()
+        result = reconcile.reconcile_all()
 
-        assert E2BSandbox.objects.get(sandbox_id="sbx-1").status == E2BSandboxStatus.RUNNING.value
+        assert E2BSandbox.objects.get(sandbox_id="sbx-1").status == local_status
+        assert result.converged == 0
+
+    def test_unrecognized_states_are_logged_once_per_cluster(self, gateway, bk_app, caplog):
+        """无法识别的状态按集群汇总成一条日志。
+
+        逐条打的话，网关一升级就会每轮按沙箱数刷屏，而这里实际什么都没改。
+        """
+        for idx in range(3):
+            _record(bk_app, f"sbx-{idx}")
+        gateway.items = [_gateway_item(f"sbx-{idx}", state="hibernating") for idx in range(3)]
+
+        with caplog.at_level(logging.WARNING, logger=reconcile.logger.name):
+            reconcile.reconcile_all()
+
+        unrecognized_logs = [r for r in caplog.records if "unrecognized states" in r.message]
+        assert len(unrecognized_logs) == 1
+        assert "3 sandbox(es)" in unrecognized_logs[0].getMessage()
+        assert "hibernating" in unrecognized_logs[0].getMessage()
+
+    def test_gateway_reported_terminated_is_honored(self, gateway, bk_app):
+        """terminated 是已知取值，网关这么说就照它收敛，不算无法识别。"""
+        _record(bk_app, "sbx-1")
+        gateway.items = [_gateway_item("sbx-1", state=E2BSandboxStatus.TERMINATED.value)]
+
+        result = reconcile.reconcile_all()
+
+        assert E2BSandbox.objects.get(sandbox_id="sbx-1").status == E2BSandboxStatus.TERMINATED.value
+        assert result.converged == 1
 
     def test_terminated_records_are_left_alone(self, gateway, bk_app):
         """已终止的记录不参与对账"""

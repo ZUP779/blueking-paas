@@ -32,6 +32,9 @@ logger = logging.getLogger(__name__)
 def redis_lock(lock_key: str, timeout: int = 300):
     """Redis 分布式锁上下文管理器，确保跨进程的原子操作
 
+    注意 timeout 只是防死锁的兜底，不构成"执行期间必然持有锁"的保证：调用方跑得
+    比 timeout 久时锁会提前过期，此时互斥已经失效。timeout 要按最坏执行时间来给。
+
     :param lock_key: 锁的唯一标识键，建议遵循命名规范如 lock:<业务场景>
     :param timeout: 锁自动释放的超时时间（秒），预防死锁
     """

@@ -37,12 +37,16 @@ logger = logging.getLogger(__name__)
 
 RECONCILE_LOCK_KEY = "lock:reconcile_e2b_sandboxes"
 
+# 锁的存活时间在任务执行上限之上留出的余量。锁必须活得比任务久，否则它会在任务
+# 还在跑的时候过期；余量留给超时后的收尾
+RECONCILE_LOCK_TTL_MARGIN_SECONDS = 60
 
-@shared_task
+
+@shared_task(soft_time_limit=settings.AGENT_SANDBOX_E2B_RECONCILE_TIME_LIMIT_SECONDS)
 def reconcile_e2b_sandboxes_task():
     """收敛 e2b 沙箱归属表与底层网关的状态差异"""
-    timeout = settings.AGENT_SANDBOX_E2B_RECONCILE_INTERVAL_MINUTES * 60
-    # 避免同一周期内重复执行对账任务
+    timeout = settings.AGENT_SANDBOX_E2B_RECONCILE_TIME_LIMIT_SECONDS + RECONCILE_LOCK_TTL_MARGIN_SECONDS
+    # 避免与上一轮尚未结束的对账重叠
     with redis_lock(RECONCILE_LOCK_KEY, timeout=timeout) as acquired:
         if not acquired:
             logger.warning("Another worker is reconciling e2b sandboxes, skip.")

@@ -74,6 +74,8 @@ class E2BReconcileOutcome(StrStructuredEnum):
     """对账指标 ``e2b_sandbox_reconciled`` 的 outcome 取值"""
 
     CONVERGED = EnumField("converged", label="本地状态已收敛")
+    # 网关返回了本枚举之外的状态，说明平台的状态定义落后于网关版本。
+    UNKNOWN_STATE = EnumField("unknown_state", label="网关状态无法识别")
     ORPHAN_KILLED = EnumField("orphan_killed", label="已销毁孤儿实例")
     ORPHAN_KILL_FAILED = EnumField("orphan_kill_failed", label="销毁孤儿失败")
     CLUSTER_SKIPPED = EnumField("cluster_skipped", label="集群被跳过")

@@ -1716,6 +1716,10 @@ AGENT_SANDBOX_MOUNT_PATH_DENY_PREFIXES = settings.get(
 # 对账周期。沙箱由网关按空闲超时自行回收，本地记录靠这个任务收敛，
 # 周期即用户看到的状态最大滞后时间
 AGENT_SANDBOX_E2B_RECONCILE_INTERVAL_MINUTES = settings.get("AGENT_SANDBOX_E2B_RECONCILE_INTERVAL_MINUTES", 5)
+# 单轮对账的执行上限。超时即中断本轮，下一轮从头再来（对账是幂等的）。
+# 与调度周期分开配置：周期决定状态滞后多久，这个决定单轮最多跑多久。
+# 互斥锁的存活时间由它推导，因此调大它就等于放宽锁的兜底时间
+AGENT_SANDBOX_E2B_RECONCILE_TIME_LIMIT_SECONDS = settings.get("AGENT_SANDBOX_E2B_RECONCILE_TIME_LIMIT_SECONDS", 600)
 # 是否清理网关侧无人认领的孤儿实例。
 AGENT_SANDBOX_E2B_ORPHAN_CLEANUP_ENABLED = settings.get("AGENT_SANDBOX_E2B_ORPHAN_CLEANUP_ENABLED", True)
 # 孤儿实例的安全窗口。从对账任务首次观察到该实例起算，用于避开

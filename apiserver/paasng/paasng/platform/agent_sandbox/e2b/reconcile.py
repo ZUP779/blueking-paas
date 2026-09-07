@@ -195,10 +195,17 @@ def _converge_local_states(cluster_name: str, gateway_states: dict[str, str | No
     不在其中就说明它已经被回收了。
     """
     changed: list[E2BSandbox] = []
+    unrecognized: list[str | None] = []
     now = timezone.now()
 
     for record in E2BSandbox.objects.filter(cluster_name=cluster_name, status__in=E2BSandboxStatus.active_values()):
         target = _target_status(gateway_states, record.sandbox_id)
+        if target is None:
+            # 状态无法判定，保留本地原状态。网关既然还列出它，它就是活的，
+            # 只是活法我们不认识，留着上一个已知状态比改成任何猜测值都更接近事实
+            unrecognized.append(gateway_states[record.sandbox_id])
+            continue
+
         if target == record.status:
             continue
 
@@ -209,6 +216,17 @@ def _converge_local_states(cluster_name: str, gateway_states: dict[str, str | No
         # bulk_update 不走 save()，auto_now 不会刷新；归档又按 updated 算保留期，必须显式写
         record.updated = now
         changed.append(record)
+
+    if unrecognized:
+        logger.warning(
+            "cluster %s: gateway reported %d sandbox(es) in unrecognized states %s, local records left untouched",
+            cluster_name,
+            len(unrecognized),
+            sorted({str(state) for state in unrecognized}),
+        )
+        E2B_SANDBOX_RECONCILED_COUNTER.labels(
+            cluster=cluster_name, outcome=E2BReconcileOutcome.UNKNOWN_STATE.value
+        ).inc(len(unrecognized))
 
     if changed and not dry_run:
         # 只更新状态字段。归属与租户不在列表里，对账改不到它们
@@ -221,16 +239,19 @@ def _converge_local_states(cluster_name: str, gateway_states: dict[str, str | No
     return len(changed)
 
 
-def _target_status(gateway_states: dict[str, str | None], sandbox_id: str) -> str:
+def _target_status(gateway_states: dict[str, str | None], sandbox_id: str) -> str | None:
+    """算出记录应该收敛到的状态。
+
+    :returns: 目标状态，无法判定时为 None
+    """
     if sandbox_id not in gateway_states:
         return E2BSandboxStatus.TERMINATED.value
 
     state = gateway_states[sandbox_id]
-    if state in E2BSandboxStatus.active_values():
+    if state in E2BSandboxStatus.get_values():
         return state  # type: ignore[return-value]
 
-    logger.warning("unknown state %r for e2b sandbox %s, leaving it as running", state, sandbox_id)
-    return E2BSandboxStatus.RUNNING.value
+    return None
 
 
 def _handle_orphans(cluster_name: str, gateway_ids: set[str], dry_run: bool) -> tuple[int, int, int]:
