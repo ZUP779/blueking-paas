@@ -52,6 +52,7 @@ def reconcile_e2b_sandboxes_task():
             logger.warning("Another worker is reconciling e2b sandboxes, skip.")
             return
 
+        logger.info("e2b reconcile started")
         result = reconcile_all()
         logger.info(
             "e2b reconcile done: converged=%d orphans_killed=%d orphans_waiting=%d "
