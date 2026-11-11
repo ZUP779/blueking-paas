@@ -242,7 +242,7 @@ def mark_sync_pending(cluster_names: set[str] | None = None, resource_names: set
         records = records.filter(cluster_name__in=cluster_names)
     if resource_names is not None:
         records = records.filter(template__resource_name__in=resource_names)
-    stale = [r.pk for r in records if not _is_current(r, r.template)]
+    stale = [r.pk for r in records if not is_current(r, r.template)]
     E2BSandboxTemplateSyncRecord.objects.filter(pk__in=stale).update(
         status=E2BTemplateSyncStatus.PENDING.value, message=""
     )
@@ -423,7 +423,12 @@ def get_cluster_overviews() -> list[ClusterSyncOverview]:
 def is_applied(template: E2BSandboxTemplate, cluster_name: str) -> bool:
     """集群里的 SandboxTemplate 是否已是模板的当前配置"""
     record = E2BSandboxTemplateSyncRecord.objects.filter(template=template, cluster_name=cluster_name).first()
-    return record is not None and _is_current(record, template)
+    return record is not None and is_current(record, template)
+
+
+def is_current(record: E2BSandboxTemplateSyncRecord, template: E2BSandboxTemplate) -> bool:
+    """记录所在集群里的 SandboxTemplate 是否已是模板的当前配置：最近一次下发成功，且下发的就是当前配置"""
+    return record.status == E2BTemplateSyncStatus.SUCCEEDED.value and record.digest == spec_digest(template)
 
 
 def get_template_statuses(
@@ -449,16 +454,11 @@ def get_template_statuses(
 def _template_status(template: E2BSandboxTemplate, record: E2BSandboxTemplateSyncRecord | None) -> E2BTemplateStatus:
     if record is None:
         return E2BTemplateStatus.SYNCING
-    if _is_current(record, template):
+    if is_current(record, template):
         return E2BTemplateStatus.AVAILABLE
     if record.status == E2BTemplateSyncStatus.FAILED.value:
         return E2BTemplateStatus.SYNC_FAILED
     return E2BTemplateStatus.SYNCING
-
-
-def _is_current(record: E2BSandboxTemplateSyncRecord, template: E2BSandboxTemplate) -> bool:
-    """最近一次下发成功，且下发的就是模板当前配置"""
-    return record.status == E2BTemplateSyncStatus.SUCCEEDED.value and record.digest == spec_digest(template)
 
 
 def _enabled_configs() -> list[ClusterE2BConfig]:

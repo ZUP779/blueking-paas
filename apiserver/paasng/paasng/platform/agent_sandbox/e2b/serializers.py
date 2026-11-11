@@ -32,8 +32,11 @@ from .constants import (
     MAX_TEMPLATE_MEMORY_MB,
     MAX_TEMPLATE_PREWARM_COUNT,
     MIN_TEMPLATE_DISK_SIZE_MB,
+    RESOURCE_NAME_MAX_LENGTH,
     TEMPLATE_ID_PATTERN,
 )
+from .exceptions import E2BTemplateNotFound
+from .templates import get_custom_resource_prefix
 
 _ENV_VAR_NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 
@@ -81,12 +84,13 @@ class E2BSandboxCreateInputSLZ(serializers.Serializer):
     # 字段名是 e2b 协议规定的驼峰形式，不能改成平台习惯的下划线
     templateID = serializers.CharField(help_text="沙箱模板标识")
 
-    def validate_templateID(self, value: str) -> str:  # noqa: N802
-        # 未登记与已下线不作区分，SDK 侧只需要知道这个模板不能用。
-        # 不看 is_public：不公开只影响页面展示，服务自用的模板要能通过 SDK 使用
-        if not E2BSandboxTemplate.objects.builtins().filter(template_id=value, enabled=True).exists():
-            raise serializers.ValidationError(f"template {value} is not available")
-        return value
+    def validate(self, attrs):
+        # 不存在、已停用、属于其他应用都不作区分，SDK 侧只需要知道这个模板不能用
+        try:
+            attrs["template"] = E2BSandboxTemplate.objects.get_usable(self.context["application"], attrs["templateID"])
+        except E2BTemplateNotFound:
+            raise serializers.ValidationError({"templateID": f"template {attrs['templateID']} is not available"})
+        return attrs
 
 
 class E2BSandboxTimeoutInputSLZ(serializers.Serializer):
@@ -130,24 +134,6 @@ class E2BConsoleSandboxOutputSLZ(serializers.Serializer):
     disk_size_mb = serializers.IntegerField(source="diskSizeMB", help_text="磁盘（MB）")
     started_at = _GatewayDateTimeField(source="startedAt", help_text="启动时间")
     end_at = _GatewayDateTimeField(source="endAt", help_text="预计回收时间")
-
-
-class E2BConsoleTemplateOutputSLZ(serializers.Serializer):
-    """模板列表项"""
-
-    template_id = serializers.CharField(help_text="模板标识，即 SDK 创建沙箱时传入的 templateID")
-    name = serializers.CharField(help_text="展示名称")
-    description = serializers.CharField(help_text="描述，可能为空字符串")
-    cpu_count = serializers.IntegerField(help_text="CPU 核数")
-    memory_mb = serializers.IntegerField(help_text="内存（MB）")
-    disk_size_mb = serializers.IntegerField(allow_null=True, help_text="系统盘（MB），为空表示未挂载独立系统盘")
-
-
-class E2BConsoleTemplateDetailOutputSLZ(E2BConsoleTemplateOutputSLZ):
-    """模板详情，在列表项基础上增加镜像等信息。"""
-
-    image = serializers.CharField(help_text="镜像")
-    prewarm_count = serializers.IntegerField(help_text="每个集群预热的实例数")
 
 
 class E2BTemplateSpecInputSLZ(serializers.Serializer):
@@ -206,6 +192,18 @@ class E2BTemplateIDField(serializers.RegexField):
         return value
 
 
+class E2BCustomTemplateCreateInputSLZ(E2BTemplateSpecInputSLZ):
+    """创建自定义模板，context 中须带上所属应用"""
+
+    template_id = E2BTemplateIDField()
+
+    def validate_template_id(self, value: str) -> str:
+        max_length = RESOURCE_NAME_MAX_LENGTH - len(get_custom_resource_prefix(self.context["application"]))
+        if len(value) > max_length:
+            raise serializers.ValidationError(f"模板标识过长，当前应用下最多 {max_length} 个字符")
+        return value
+
+
 class E2BBuiltinTemplateUpdateInputSLZ(E2BTemplateSpecInputSLZ):
     """修改内置模板，全量覆盖"""
 
@@ -220,3 +218,36 @@ class E2BBuiltinTemplateUpdateInputSLZ(E2BTemplateSpecInputSLZ):
 
 class E2BBuiltinTemplateCreateInputSLZ(E2BBuiltinTemplateUpdateInputSLZ):
     template_id = E2BTemplateIDField()
+
+
+class E2BTemplateOutputSLZ(serializers.Serializer):
+    """模板列表项"""
+
+    template_id = serializers.CharField(help_text="模板标识，即 SDK 创建沙箱时传入的 templateID")
+    is_builtin = serializers.BooleanField(help_text="是否内置模板，否则为本应用的自定义模板")
+    name = serializers.CharField(help_text="展示名称")
+    description = serializers.CharField(help_text="描述，可能为空字符串")
+    image = serializers.CharField(help_text="镜像")
+    cpu_count = serializers.IntegerField(help_text="CPU 核数")
+    memory_mb = serializers.IntegerField(help_text="内存（MB）")
+    disk_size_mb = serializers.IntegerField(allow_null=True, help_text="系统盘（MB），为空表示未挂载独立系统盘")
+    status = serializers.SerializerMethodField(
+        help_text="能否用来创建沙箱：available 可用；syncing 当前配置还没下发完；"
+        "sync_failed 下发失败，需修改模板或联系平台管理员；no_cluster 应用没有可用的 e2b 集群"
+    )
+
+    def get_status(self, obj) -> str:
+        """context 中须带上 ``statuses``，即 ``get_template_statuses`` 的结果"""
+        return self.context["statuses"][obj.resource_name].value
+
+
+class E2BTemplateDetailOutputSLZ(E2BTemplateOutputSLZ):
+    """模板详情。内置模板的环境变量由平台管理员配置，不对应用展示"""
+
+    env_vars = serializers.SerializerMethodField(help_text="环境变量，内置模板固定为空")
+    workdir = serializers.CharField(help_text="工作目录，可能为空字符串")
+    created = serializers.DateTimeField(help_text="创建时间")
+    updated = serializers.DateTimeField(help_text="更新时间")
+
+    def get_env_vars(self, obj) -> dict[str, str]:
+        return {} if obj.is_builtin else obj.env_vars
