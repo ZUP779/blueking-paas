@@ -111,6 +111,20 @@ def _add_rootfs_disk(spec: dict[str, Any], disk_size_mb: int) -> None:
     ]
 
 
+def build_template_patch(template: E2BSandboxTemplate, namespace: str) -> dict[str, Any]:
+    """更新已有 SandboxTemplate 用的 merge patch。
+
+    merge patch 不会删掉清单里缺的键，去掉系统盘时须把 ``_add_rootfs_disk`` 加的字段显式置空
+    """
+    patch = build_template_manifest(template, namespace)
+    if not template.disk_size_mb:
+        spec = patch["spec"]["template"]["spec"]
+        spec["domain"]["devices"] = None
+        spec["podTemplate"]["volumes"] = None
+        spec["volumeClaimTemplates"] = None
+    return patch
+
+
 def build_pool_manifest(template: E2BSandboxTemplate, namespace: str) -> dict[str, Any]:
     """生成模板对应的 SandboxPool"""
     replicas = template.prewarm_count if template.is_builtin else 0
